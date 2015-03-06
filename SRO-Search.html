@@ -1,0 +1,330 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Search-SRO</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/dashboard.css" rel="stylesheet">
+<link href="css/mycss.css" rel="stylesheet">
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row"><!-- 侧边导航栏 -->
+      <span id="icon-menu">
+          <i class="icon-menu"></i>
+      </span>
+      <div id="slidebar" class="col-sm-2 col-md-1 mysidebar">
+          <ul class="nav nav-sidebar" id="nav-sidebar">
+            <li><a href="SRO.html" target="_self">Category</a></li>
+            <li><a href="SRO-Archived.html" target="_self">Archived</a></li>
+            <li class="active"><a href="SRO-Search.html" target="_self">Search</a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="position:absolute; left:42%; top:12%;"><!--Search-->
+    <div class="row">
+      <div class="col-lg-6">
+          <div class="input-group">
+            <button type="button" class="btn btn-info" style="position:absolute; left:410px;"><span class="glyphicon glyphicon-search"></span></button>
+            <input type="search" class="form-control" style="width:400px" placeholder="search...">
+            <div style="position:absolute; top:50px">
+              <label class="radio-inline">
+                <input id="fresh_radio" type="radio" name="type" value="fresh" />Fresh
+              </label> 
+              <label class="radio-inline">
+                <input id="archive_radio" type="radio" name="type" value="archive" />Archived
+              </label> 
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="fresh" class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-1 main" style="position:absolute; left:5%; top:25%;"><!--Fresh-->
+    <div class="table-responsive">
+        <table id="table" class="table table-hover" sortLag="-1">
+            <thead>
+              <tr>
+                <th>
+                    <i class="glyphicon glyphicon-ok-sign"></i>
+                </th>
+                <th>
+                    <i class="glyphicon glyphicon-edit"></i>
+                </th>
+                <th onClick="mySortInt(2,-1)">
+                    <a href="#" style="text-decoration:none; color:#000;"><div class="glyphicon glyphicon-pushpin"><span class="dropup"><b class="caret"></b></span></div></a>
+                </th>
+                <th onClick="mySortString(3)">
+                  <a href="#" style="text-decoration:none; color:#000;"><div class="glyphicon glyphicon-flag"><span class="dropup"><b class="caret"></b></span></div></a>
+                </th>
+                <th onClick="mySortString(4)">
+                  <a href="#" style="text-decoration:none; color:#000;"><div class="glyphicon glyphicon-bookmark"><span class="dropup"><b class="caret"></b></span></div></a>
+                </th>
+                <th onClick="mySortString(5)">
+                  <span class="dropup"><a href="#" style="color:#000;"><div class="glyphicon glyphicon-home"><b class="caret"></b></div></a></span>
+                </th>
+                <th onClick="mySortInt(6,-1)">
+                  <span class="dropup"><a href="#" style="color:#000;"><div class="glyphicon glyphicon-user"><b class="caret"></b></div></a></span>
+                </th>
+                <th onClick="mySortInt(7,7)">
+                  <span class="dropup"><a href="#" style="color:#000;"><div class="glyphicon glyphicon-calendar" style="margin-left:25px;"><b class="caret"></b></div></a></span>
+                </th>   
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" name="checkbox"></td>
+                <td data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-pencil" style="color:#FF5706;"></span></a></td>
+                <td>1</td>
+                <td>Biology</td>
+                <td><a href="detail.html" target="_blank">ASPIRE League Research Grant 2014 - Call for Proposals</a></td>
+                <td data-toggle="modal" data-target=".bs-example-modal-md">3</td>
+                <td data-toggle="modal" data-target=".bs-example-modal-md">4</td>
+                <td>Dec 25, 2014</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="checkbox"></td>
+                <td data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-pencil" style="color:#FF5706;"></span></a></td>
+                <td>2</td>
+                <td>Chemistry</td>
+                <td><a href="#">WSHI 2014 Request for Proposal and Invitation to Compulsory Briefing Session</a></td>
+                <td>2</td>
+                <td>14</td>
+                <td>Apr 10, 2014</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="checkbox"></td>
+                <td data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-pencil" style="color:#FF5706;"></span></a></td>
+                <td>3</td>
+                <td>Architecture</td>
+                <td><a href="#">Grant opportunities from The Bill & Melinda Gates Foundation - Grand Challenges Explorations Round 14</a></td>
+                <td>3</td>
+                <td>24</td>
+                <td>Jan 20, 2014</td>                 
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="checkbox"></td>
+                <td data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-pencil" style="color:#FF5706;"></span></a></td>
+                <td>4</td>
+                <td>Biology</td>
+                <td><a href="detail.html" target="_blank">ASPIRE League Research Grant 2014 - Call for Proposals</a></td>
+                <td>4</td>
+                <td>34</td>
+                <td>Oct 05, 2014</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="checkbox"></td>
+                <td data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-pencil" style="color:#FF5706;"></span></a></td>
+                <td>5</td>
+                <td>Business</td>
+                <td><a href="#">WSHI 2014 Request for Proposal and Invitation to Compulsory Briefing Session</a></td>
+                <td>2</td>
+                <td>44</td>
+                <td>Nov 19, 2014</td>                        
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="checkbox"></td>
+                <td data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-pencil" style="color:#FF5706;"></span></a></td>
+                <td>6</td>
+                <td>Physics</td>
+                <td><a href="#">Grant opportunities from The Bill & Melinda Gates Foundation - Grand Challenges Explorations Round 14</a></td>
+                <td>3</td>
+                <td>21</td>
+                <td>Feb 12, 2014</td>                          
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="checkbox"></td>
+                <td data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-pencil" style="color:#FF5706;"></span></a></td>
+                <td>7</td>
+                <td>Computer</td>
+                <td><a href="detail.html" target="_blank">ASPIRE League Research Grant 2014 - Call for Proposals</a></td>
+                <td>4</td>
+                <td>0</td>
+                <td>Jan 15, 2014</td>                           
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="checkbox"></td>
+                <td data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-pencil" style="color:#FF5706;"></span></a></td>
+                <td>9</td>
+                <td>Psychology</td>
+                <td><a href="#">WSHI 2014 Request for Proposal and Invitation to Compulsory Briefing Session</a></td>
+                <td>1</td>
+                <td>8</td>
+                <td>Apr 15, 2014</td>                            
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="checkbox"></td>
+                <td data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-pencil" style="color:#FF5706;"></span></a></td>
+                <td>10</td>
+                <td>Physics</td>
+                <td><a href="detail.html" target="_blank">ASPIRE League Research Grant 2014 - Call for Proposals</a></td>
+                <td>2</td>
+                <td>120</td>
+                <td>May 07, 2014</td>       
+              </tr>
+            </tbody>
+        </table>
+        <a href="#" class="col-xs-1  col-sm-1 col-md-1" style="margin-left:-85px"><button class="btn btn-danger btn-md footer_btn"><i class="imoon-bin"></i></button></a>
+    </div>
+  </div>
+
+  <div id="archived" class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-1 main" style="position:absolute; left:5%; top:25%; display:none;"><!--Archived-->
+    <div class="table-responsive">
+      <table id="table" class="table table-hover" sortLag="-1">
+        <thead>
+          <tr>
+            <th>
+            <i class="glyphicon glyphicon-edit"></i>
+            </th>
+            <th onClick="mySortInt(1,-1)">
+              <a style="text-decoration:none; color:#000;"><div class="glyphicon glyphicon-pushpin"><span class="dropup"><b class="caret"></b></span></div></a>
+            </th>
+            <th onClick="mySortString(2)">
+              <a style="text-decoration:none; color:#000;"><div class="glyphicon glyphicon-flag"><span class="dropup"><b class="caret"></b></span></div></a>
+            </th>
+            <th onClick="mySortString(3)">
+              <a style="text-decoration:none; color:#000;"><div class="glyphicon glyphicon-bookmark"><span class="dropup"><b class="caret"></b></span></div></a>
+            </th>
+            <th onClick="mySortInt(4,-1)">
+              <span class="dropup"><a style="color:#000;"><div class="glyphicon glyphicon-user"><b class="caret"></b></div></a></span>
+            </th>
+            <th onClick="mySortInt(5,5)">
+              <span class="dropup"><a style="color:#000;"><div class="glyphicon glyphicon-calendar" style="margin-left:25px;"><b class="caret"></b></div></a></span>
+            </th>
+            <th>
+              <i class="glyphicon glyphicon-list-alt"></i>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="form_modify.html" target="_blank" style="color:#60F"><span class="glyphicon glyphicon-pencil"></span></a></td>
+            <td>1</td>
+            <td>Biology</td>
+            <td><a href="detail.html" target="_blank">ASPIRE League Research Grant 2014 - Call for Proposals</a></td>
+            <td>2</td>
+            <td>Dec 25, 2012</td>
+            <td>NIL</td>
+          </tr>
+          <tr>
+            <td><a href="form_modify.html" target="_blank" style="color:#60F"><span class="glyphicon glyphicon-pencil"></span></a></td>
+            <td>2</td>
+            <td>Chemistry</td>
+            <td><a href="#">WSHI 2014 Request for Proposal and Invitation to Compulsory Briefing Session</a></td>
+            <td>12</td>
+            <td>Apr 10, 2013</td>
+            <td>NIL</td>
+          </tr>
+          <tr>
+            <td><a href="form_modify.html" target="_blank" style="color:#60F"><span class="glyphicon glyphicon-pencil"></span></a></td>
+            <td>3</td>
+            <td>Architecture</td>
+            <td><a href="#">Grant opportunities from The Bill & Melinda Gates Foundation - Grand Challenges Explorations Round 14</a></td>
+            <td>22</td>
+            <td>Jan 20, 2010</td>
+            <td>NIL</td>
+          </tr>
+          <tr>
+            <td><a href="form_modify.html" target="_blank" style="color:#60F"><span class="glyphicon glyphicon-pencil"></span></a></td>
+            <td>4</td>
+            <td>Biology</td>
+            <td><a href="detail.html" target="_blank">ASPIRE League Research Grant 2014 - Call for Proposals</a></td>
+            <td>32</td>
+            <td>Oct 05, 2004</td>
+            <td>NIL</td>
+          </tr>
+          <tr>
+            <td><a href="form_modify.html" target="_blank" style="color:#60F"><span class="glyphicon glyphicon-pencil"></span></a></td>
+            <td>5</td>
+            <td>Business</td>
+            <td><a href="#">WSHI 2014 Request for Proposal and Invitation to Compulsory Briefing Session</a></td>
+            <td>7</td>
+            <td>Nov 19, 1984</td>
+            <td>NIL</td>
+          </tr>
+          <tr>
+            <td><a href="form_modify.html" target="_blank" style="color:#60F"><span class="glyphicon glyphicon-pencil"></span></a></td>
+            <td>6</td>
+            <td>Physics</td>
+            <td><a href="#">Grant opportunities from The Bill & Melinda Gates Foundation - Grand Challenges Explorations Round 14</a></td>
+            <td>10</td>
+            <td>Feb 12, 1994</td>
+            <td>NIL</td>
+          </tr>
+          <tr>
+            <td><a href="form_modify.html" target="_blank" style="color:#60F"><span class="glyphicon glyphicon-pencil"></span></a></td>
+            <td>7</td>
+            <td>Computer</td>
+            <td><a href="detail.html" target="_blank">ASPIRE League Research Grant 2014 - Call for Proposals</a></td>
+            <td>14</td>
+            <td>Jan 15, 1980</td>
+            <td>NIL</td>
+          </tr>
+          <tr>
+            <td><a href="form_modify.html" target="_blank" style="color:#60F"><span class="glyphicon glyphicon-pencil"></span></a></td>
+            <td>9</td>
+            <td>Psychology</td>
+            <td><a href="#">WSHI 2014 Request for Proposal and Invitation to Compulsory Briefing Session</a></td>
+            <td>9</td>
+            <td>Apr 15, 1789</td>
+            <td>NIL</td>
+          </tr>
+            <td><a href="form_modify.html" target="_blank" style="color:#60F"><span class="glyphicon glyphicon-pencil"></span></a></td>
+          <td>10</td>
+            <td>Physics</td>
+            <td><a href="detail.html" target="_blank">ASPIRE League Research Grant 2014 - Call for Proposals</a></td>
+            <td>10</td>
+            <td>May 07, 2002</td>
+            <td>NIL</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true"><!-- 设置时间模块 -->
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <div class="container" style="margin-left:40px;">
+            <div class="row">
+              <div class="col-sm-2">
+                <form class="form-signin" role="form" action="addDeadlineBySRO.action" method="post">
+                  <span style="margin-left:25px;" class="glyphicon glyphicon-time"></span>
+                  <label style="margin-left:5px;">Set Deadline</label>
+                  <input type="date" class="form-control input-sm" style="margin-bottom:15px;" name="deadline"/>
+                  <input type="text" class="form-control input-sm" style="margin-bottom:15px;" name="description"/>
+                  <input id="putIdHere" type="text" style="height:20px;display: none;" name="grantId" /><!--隐藏value为grantId的input框-->
+                  <input type="submit" class="btn btn-warning btn-md" style="margin-left:10px;" value="Add SRO Deadline" class="form-control"/>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/myJavaScript.js"></script>
+  <script src="js/bootstrap.js"></script>
+</body>
+</html>
